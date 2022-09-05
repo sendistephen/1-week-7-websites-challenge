@@ -88,18 +88,30 @@ const featuredTopics = [
 ];
 function Featured() {
 	return (
-		<div className="grid grid-cols-4 gap-8 mb-6">
-			{featuredTopics.map((featured) => (
-				<div key={featured.id}>
-					<h3 className="text-black font-bold mb-4">{featured.category}</h3>
-					{featured.topic.map((topic) => (
-						<div key={topic.id} className="mb-4">
-							<h4 className="text-indigo-800 font-bold underline mb-2">{topic.label}</h4>
-							<p className="text-gray-500 text-sm">{topic.num_students} students</p>
-						</div>
-					))}
-				</div>
-			))}
+		<div>
+			<h1 className="mb-4 font-bold text-black text-xl">
+				Featured topics by category
+			</h1>
+			<div className="grid gap-8 mb-6 grid-cols-2 md:grid-cols-4">
+				{featuredTopics.map((featured) => (
+					<div key={featured.id}>
+						<h3 className="text-black font-bold mb-4">{featured.category}</h3>
+						{featured.topic.map((topic) => (
+							<div key={topic.id} className="mb-4">
+								<h4 className="text-indigo-800 font-bold underline mb-2">
+									{topic.label}
+								</h4>
+								<p className="text-gray-500 text-sm">
+									{topic.num_students} students
+								</p>
+							</div>
+						))}
+					</div>
+				))}
+			</div>
+			<button className="w-full px-5 py-3 border border-black text-black font-bold hover:bg-gray-100 md:w-auto">
+				Explore more topics
+			</button>
 		</div>
 	);
 }

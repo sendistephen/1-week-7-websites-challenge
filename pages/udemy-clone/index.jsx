@@ -209,39 +209,32 @@ function index() {
 						<button>Explore Drawing</button>
 					</div> */}
 				</section>
-				<section id="top-categories" className="my-10">
-					<h1 className="mb-4 font-bold text-black">Top categories</h1>
+				<section id="top-categories" className="my-10  px-8">
 					<Categories />
 				</section>
 			</div>
-			<section id="featured-topics" className="p-20 bg-slate-50">
-				<h1 className="mb-4 font-bold text-black text-xl">
-					Featured topics by category
-				</h1>
+			<section id="featured-topics" className="p-8 md:p-20 bg-slate-50">
 				<Featured />
-				<button className="px-5 py-3 border border-black text-black font-bold hover:bg-gray-100">
-					Explore more topics
-				</button>
 			</section>
 			<section id="instructor" className="my-10">
-				<div className="flex justify-center items-center space-x-12">
+				<div className="px-8 flex flex-col space-y-2 md:flex-row md:justify-center md:items-center md:space-x-12">
 					<Image
 						src={InstructorImage}
 						alt="Instructor"
-						// layout="responsive"
+						layout="fixed"
 						width="400"
 						height="400"
 					/>
 
-					<div className="max-w-sm">
-						<h1 className="text-3xl font-extrabold text-black mb-2">
+					<div className="w-full md:max-w-sm">
+						<h1 className="text-3xl text-center  font-extrabold text-black mb-2 md:text-left">
 							Become an instructor
 						</h1>
-						<p className="mb-4">
+						<p className="mb-4 text-center md:text-left">
 							Instructors from around the world teach millions of students on
 							Udemy. We provide the tools and skills to teach what you love.
 						</p>
-						<button className="px-5 py-3 bg-black border border-black text-white font-bold">
+						<button className="w-full  px-5 py-3 bg-black border border-black text-white font-bold md:w-auto">
 							Start teaching today
 						</button>
 					</div>
@@ -251,32 +244,36 @@ function index() {
 				<Trusties />
 			</section>
 			<section id="udemy-business" className="my-10">
-				<div className="flex justify-center items-center space-x-12">
-					<div className="max-w-sm">
-						<Image
-							src={UdemyBusinessLogo}
-							alt="Business Logo"
-							width="250"
-							height="100"
-						/>
-						<p className="mb-4">
+				<div className="flex flex-col-reverse md:flex-row md:justify-center md:items-center md:space-x-12">
+					<div className="px-8 md:max-w-sm">
+						<div className="text-center md:text-left">
+							<Image
+								src={UdemyBusinessLogo}
+								alt="Business Logo"
+								width="250"
+								height="100"
+							/>
+						</div>
+						<p className="mb-4 items-center md:items-start">
 							Instructors from around the world teach millions of students on
 							Udemy. We provide the tools and skills to teach what you love.
 						</p>
-						<button className="px-5 py-3 bg-black border border-black text-white font-bold">
+						<button className="w-full px-5 py-3 bg-black border border-black text-white font-bold md:w-auto">
 							Get Udemy Business
 						</button>
 					</div>
-
-					<Image
-						src={UdemyBusinessPerson}
-						alt="Business Person"
-						width="400"
-						height="400"
-					/>
+					<div className="text-center md:text-left">
+						<Image
+							src={UdemyBusinessPerson}
+							alt="Business Person"
+							width="400"
+							height="400"
+							layout="fixed"
+						/>
+					</div>
 				</div>
 				<div className="mt-28">
-					<div className="flex justify-center items-center space-x-12">
+					<div className="flex flex-col items-center md:flex-row md:justify-center md:items-center md:space-x-12">
 						<Image
 							src={UdemyBusinessPerson2}
 							alt="Instructor"
@@ -284,24 +281,31 @@ function index() {
 							height="400"
 						/>
 
-						<div className="max-w-sm">
-							<h1 className="text-3xl font-extrabold text-black mb-2">
+						<div className="px-8 w-full md:max-w-sm">
+							<h1 className="text-3xl font-extrabold text-black mb-2 text-center md:text-left">
 								Transform your life through education
 							</h1>
-							<p className="mb-4">
+							<p className="mb-4 text-center md:text-left">
 								Learners around the world are launching new careers, advancing
 								in their fields, and enriching their lives.
 							</p>
-							<button className="px-5 py-3 bg-black border border-black text-white font-bold">
+							<button className="w-full md:w-auto px-5 py-3 bg-black border border-black text-white font-bold">
 								Find out how
 							</button>
 						</div>
 					</div>
 				</div>
 			</section>
-			<section id="footer" className="bg-black px-8 py-8">
-				<div className="flex justify-between">
-					<div className="grow grid grid-cols-4 text-gray-200 text-sm transition-all duration-300">
+
+			<section id="footer" className="bg-black px-8 py-8 w-full">
+				<div className="px-8 space-y-4 md:space-y-0 md:flex md:justify-between ">
+					<div className="block md:hidden">
+						<button className="flex items-center space-x-1 px-4 py-2 border border-white text-white">
+							<HiGlobeAlt className="h-6 w-6" />
+							<span className="text-sm text-white">English</span>
+						</button>
+					</div>
+					<div className="text-gray-200 text-sm space-y-10 md:space-y-0 transition-all duration-300 md:grow md:grid md:grid-cols-4">
 						<div className="flex flex-col space-y-2">
 							<p className="hover:underline">Udemy Business</p>
 							<ul className="flex flex-col space-y-2">
@@ -330,21 +334,23 @@ function index() {
 							</ul>
 						</div>
 					</div>
-					<div>
+					<div className="hidden md:block">
 						<button className="flex items-center space-x-1 px-4 py-2 border border-white text-white">
 							<HiGlobeAlt className="h-6 w-6" />
 							<span className="text-sm text-white">English</span>
 						</button>
 					</div>
 				</div>
-				<div className="flex justify-between items-center text-white mt-20">
-					<Image
-						src={UdemyLogoInv}
-						alt="udemy logo"
-						className="text-gray-100 fill-current"
-						width="100"
-						height="50"
-					/>
+				<div className="px-8 relative text-white mt-20 flex flex-col justify-start space-y-4 md:space-y-0 md:flex-row md:justify-between md:items-center ">
+					<div>
+						<Image
+							src={UdemyLogoInv}
+							alt="udemy logo"
+							className="text-gray-100 fill-current absolute -left-10"
+							width="92"
+							height="31"
+						/>
+					</div>
 					<p className="text-xs text-gray-100">&copy;2022 Udemy, Inc.</p>
 				</div>
 			</section>
