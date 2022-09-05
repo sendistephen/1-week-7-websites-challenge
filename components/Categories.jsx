@@ -53,13 +53,31 @@ const categories = [
 ];
 function Categories() {
 	return (
-		<div className="grid grid-cols-4 gap-8">
-			{categories.map((category) => (
-				<div key={category.id}>
-					<Image src={category.image} alt="Category" className="w-16 h-auto" />
-					<p className="text-black font-bold">{category.label}</p>
-				</div>
-			))}
+		<div>
+			<h1 className="mb-4 font-bold text-black text-2xl">Top categories</h1>
+
+			<div className="hidden md:grid md:grid-cols-3 lg:grid-cols-4 gap-8 ">
+				{categories.map((category) => (
+					<div key={category.id}>
+						<Image
+							src={category.image}
+							alt="Category"
+							className="w-16 h-auto"
+						/>
+
+						<p className="text-black font-bold">{category.label}</p>
+					</div>
+				))}
+			</div>
+			<div className="md:hidden flex flex-wrap space-y-2 space-x-2">
+				{categories.map((category) => (
+					<div
+						key={category.id}
+						className="border border-black p-3 rounded-full hover:bg-gray-100 cursor-pointer">
+						<p className="text-black font-bold">{category.label}</p>
+					</div>
+				))}
+			</div>
 		</div>
 	);
 }
