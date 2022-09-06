@@ -9,6 +9,7 @@ import UdemyBusinessLogo from "../../assets/logo-ub.svg";
 import UdemyLogoInv from "../../assets/logo-udemy-inverted.svg";
 import {
 	HiGlobeAlt,
+	HiMenu,
 	HiOutlineShoppingCart,
 	HiOutlineX,
 	HiSearch,
@@ -19,7 +20,7 @@ import Trusties from "./Trusties";
 
 function index() {
 	return (
-		<main>
+		<main className="mx-auto">
 			<div className="bg-[#ffee56] p-4 md:text-center">
 				<div className="flex justify-between">
 					<div className="w-80 md:w-full md:mx-auto">
@@ -34,8 +35,9 @@ function index() {
 					</div>
 				</div>
 			</div>
+
 			<div className="px-8  mx-auto shadow-lg">
-				<header className="py-1 pb-4 w-full text-sm my-4 md:flex md:items-center md:space-x-4">
+				<header className="hidden py-1 pb-4 w-full text-sm my-4 md:flex md:items-center md:space-x-4">
 					<div>
 						<Image className="h-8 w-8" src={Logo} alt="Udemy Logo" />
 					</div>
@@ -67,11 +69,24 @@ function index() {
 						</button>
 					</div>
 				</header>
+				{/* mobile */}
+				<header className="py-2 flex justify-between items-center md:hidden">
+					<div>
+						<HiMenu className="h-6 w-6" />
+					</div>
+					<div>
+						<Image className="h-6 w-6" src={Logo} alt="Udemy Logo" />
+					</div>
+					<div className="flex justify-between items-center space-x-4">
+						<HiSearch className="h-6 w-6" />
+						<HiOutlineShoppingCart className="w-6 h-6" />
+					</div>
+				</header>
 			</div>
 			<div className="container mx-auto">
-				<section id="hero" className="relative">
+				<section id="hero" className="hidden md:relative">
 					<Image src={HeroImage} alt="hero banner" className="w-full" />
-					<div className="absolute top-10 left-10 shadow w-96 p-4 bg-white rounded-sm">
+					<div className="hidden absolute top-10 left-10 shadow w-96 p-4 bg-white rounded-sm">
 						<h1 className="text-3xl font-extrabold text-black mb-2">
 							Need an extra day to shop the sale?
 						</h1>
@@ -80,6 +95,10 @@ function index() {
 							as $9.99. Ends today.
 						</p>
 					</div>
+				</section>
+				{/* mobile */}
+				<section>
+					<Image src={HeroImage} alt="hero banner" className="object-cover" />
 				</section>
 				<section id="courses" className="mt-10">
 					<h1 className="text-3xl font-extrabold text-black mb-2">
@@ -209,10 +228,11 @@ function index() {
 						<button>Explore Drawing</button>
 					</div> */}
 				</section>
-				<section id="top-categories" className="my-10  px-8">
+				<section id="top-categories" className="my-10 px-8 md:px-0 -md:mx-8">
 					<Categories />
 				</section>
 			</div>
+
 			<section id="featured-topics" className="p-8 md:p-20 bg-slate-50">
 				<Featured />
 			</section>
@@ -222,8 +242,8 @@ function index() {
 						src={InstructorImage}
 						alt="Instructor"
 						layout="fixed"
-						width="400"
-						height="400"
+						width="300"
+						height="300"
 					/>
 
 					<div className="w-full md:max-w-sm">
@@ -277,8 +297,8 @@ function index() {
 						<Image
 							src={UdemyBusinessPerson2}
 							alt="Instructor"
-							width="400"
-							height="400"
+							width="200"
+							height="300"
 						/>
 
 						<div className="px-8 w-full md:max-w-sm">
@@ -296,9 +316,8 @@ function index() {
 					</div>
 				</div>
 			</section>
-
 			<section id="footer" className="bg-black px-8 py-8 w-full">
-				<div className="px-8 space-y-4 md:space-y-0 md:flex md:justify-between ">
+				<div className="space-y-4 md:space-y-0 md:flex md:justify-between ">
 					<div className="block md:hidden">
 						<button className="flex items-center space-x-1 px-4 py-2 border border-white text-white">
 							<HiGlobeAlt className="h-6 w-6" />
@@ -341,7 +360,7 @@ function index() {
 						</button>
 					</div>
 				</div>
-				<div className="px-8 relative text-white mt-20 flex flex-col justify-start space-y-4 md:space-y-0 md:flex-row md:justify-between md:items-center ">
+				<div className="px-8  relative text-white mt-20 flex flex-col justify-start space-y-4 md:space-y-0 md:flex-row md:justify-between md:items-center ">
 					<div>
 						<Image
 							src={UdemyLogoInv}
