@@ -5,7 +5,7 @@ import styles from "../styles/Home.module.css";
 
 export default function Home() {
 	return (
-		<div className="bg-gray-900 h-screen">
+		<div className="px-8 bg-gray-900 h-screen">
 			<div className="max-w-5xl lg:max-w-lg mx-auto pt-10">
 				<h1 className="font-bold text-3xl sm:text-4xl mb-4 text-center text-transparent leading-relaxed bg-gradient-to-r from-green-500 via-blue-500 to-purple-500 bg-clip-text">
 					Create 7 Websites in 1 Week Challenge
@@ -24,7 +24,7 @@ export default function Home() {
 				<div className="mt-4 text-center">
 					<Link href="/udemy-clone" className="cursor-pointer">
 						<a>
-							<div className="p-2 bg-blue-900 rounded">
+							<div className="p-2 bg-gray-800 opacity-0.5 rounded">
 								<h3 className="text-xl text-transparent bg-gradient-to-r from-blue-500  via-red-500 to-violet-500 bg-clip-text">
 									Day1: Udemy Landing Page Clone
 								</h3>
