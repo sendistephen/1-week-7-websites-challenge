@@ -1,5 +1,12 @@
 import Image from "next/image";
 import React from "react";
+import {
+	Accordion,
+	AccordionItem,
+	AccordionButton,
+	AccordionPanel,
+} from "@reach/accordion";
+import "@reach/accordion/styles.css";
 import HeroImage from "../../assets/bg-hero.png";
 import InstructorImage from "../../assets/instructor-2x-v3.jpeg";
 import Logo from "../../assets/logo-udemy.svg";
@@ -42,7 +49,7 @@ function index() {
 						<Image className="h-8 w-8" src={Logo} alt="Udemy Logo" />
 					</div>
 					<div className="md:flex md:grow md:items-center space-x-4">
-						<span>Categories</span>
+						<span className="hidden lg:block">Categories</span>
 						<div className="md:grow">
 							<div className="relative">
 								<HiSearch className="absolute top-3.5 left-4 h-6 w-6 text-gray-500" />
@@ -53,8 +60,8 @@ function index() {
 								/>
 							</div>
 						</div>
-						<span>Udemy Business</span>
-						<span>Teach on Udemy</span>
+						<span className="hidden lg:block">Udemy Business</span>
+						<span className="hidden lg:block">Teach on Udemy</span>
 						<div>
 							<HiOutlineShoppingCart className="w-6 h-6" />
 						</div>
@@ -101,14 +108,14 @@ function index() {
 					<Image src={HeroImage} alt="hero banner" className="object-cover" />
 				</section>
 				<section id="courses" className="mt-10">
-					<h1 className="text-3xl font-extrabold text-black mb-2">
+					<h1 className="px-8 md:px-0 text-center md:text-left text-3xl font-extrabold text-black mb-2">
 						A broad selection of courses
 					</h1>
-					<p className="text-gray-700">
+					<p className="px-8 md:px-0 text-gray-700">
 						Choose from 204,000 online video courses with new additions
 						published every month{" "}
 					</p>
-					<div className="mt-4">
+					<div className="hidden mt-4">
 						<div className="md:flex space-x-4 text-sm mb-4">
 							<span className="font-bold">Python</span>
 							<span>Excel</span>
@@ -119,114 +126,148 @@ function index() {
 							<span>Drawing</span>
 						</div>
 					</div>
-					<div id="python">
-						<h1 className="font-bold mb-2">
-							Expand your career opportunities with Python
-						</h1>
-						<p className="text-gray-700 mb-4 max-w-4xl">
-							Take one of Udemy’s range of Python courses and learn how to code
-							using this incredibly useful language. Its simple syntax and
-							readability makes Python perfect for Flask, Django, data science,
-							and machine learning. You’ll learn how to build everything from
-							games to sites to apps. Choose from a range of courses that will
-							appeal to{" "}
-						</p>
-						<button className="px-5 py-3 border border-black text-black font-bold hover:bg-gray-100">
-							Explore Python
-						</button>
-					</div>
-					{/* <div id="Excel">
-						<h1>Analyze and visualize data with Excel</h1>
-						<p>
-							Take a Microsoft Excel course from Udemy, and learn how to use
-							this industry-standard software. Real-world experts will show you
-							the basics like how to organize data into sheets, rows and
-							columns, and advanced techniques like creating complex dynamic
-							formulas. Both small businesses and large companies use Excel to
-						</p>
-						<button>Explore Excel</button>
-					</div>
-					<div id="web-development">
-						<h1>Build websites and applications with Web Development</h1>
-						<p>
-							The world of web development is as wide as the internet itself.
-							Much of our social and vocational lives play out on the internet,
-							which prompts new industries aimed at creating, managing, and
-							debugging the websites and applications that we increasingly rely
-							on.
-						</p>
-						<div>
-							<div>
-								<p>IMAGE</p>
-								<h2>Become a Certified HTML, CSS, JavaScript Web...</h2>
-								<span>Tech Learning Network, Mark Lassoff</span>
-							</div>
-						</div>
-						<button>Explore Web Developmet</button>
-					</div>
-					<div id="javascript">
-						<h1>Grow your software development skills with JavaScript</h1>
-						<p>
-							JavaScript is a text-based computer programming language used to
-							make dynamic web pages. A must-learn for aspiring web developers
-							or programmers, JavaScript can be used for features like image
-							carousels, displaying countdowns and timers, and playing media on
-							a webpage. With JavaScript online classes, you can learn to build
-						</p>
+					<div className="px-8 py-4 md:hidden">
+						<Accordion>
+							<AccordionItem className="mb-2">
+								<h3 className="py-4 border-t border-t-gray-300 font-bold border-b-gray-300 w-full">
+									<AccordionButton>Python</AccordionButton>
+								</h3>
+								<AccordionPanel className="border border-gray-100 p-4 rounded mb-2">
+									<h1 className="font-bold mb-2">
+										Expand your career opportunities with Python
+									</h1>
+									<p className="text-sm text-gray-500 mb-2">
+										Here are some detailed instructions about doing a thing. I
+										am very complex and probably contain a lot of content, so a
+										user can hide or show me by clicking the button above.
+									</p>
+									<button className="px-5 py-3 border border-black text-black font-bold hover:bg-gray-100">
+										Explore Python
+									</button>
+								</AccordionPanel>
+							</AccordionItem>
+							<AccordionItem>
+								<h3 className="py-4 border-t border-t-gray-300 font-bold border-b-gray-300 w-full">
+									<AccordionButton>Excel</AccordionButton>
+								</h3>
+								<AccordionPanel className="border border-gray-100 p-4 rounded mb-2 mb-2">
+									<h1 className="font-bold mb-2">
+										Analyze and visualize data with Excel
+									</h1>
 
-						<button>Explore Javascript</button>
+									<p className="text-sm text-gray-500 mb-2">
+										Take a Microsoft Excel course from Udemy, and learn how to
+										use this industry-standard software. Real-world experts will
+										show you the basics like how to organize data into sheets,
+										rows and columns, and advanced techniques like creating
+										complex dynamic formulas. Both small businesses and large
+										companies use Excel to
+									</p>
+
+									<button className="px-5 py-3 border border-black text-black font-bold hover:bg-gray-100">
+										Explore Excel
+									</button>
+								</AccordionPanel>
+							</AccordionItem>
+							<AccordionItem>
+								<h3 className="py-4 border-t border-t-gray-300 font-bold border-b-gray-300 w-full">
+									<AccordionButton>Web Development</AccordionButton>
+								</h3>
+								<AccordionPanel className="border border-gray-100 p-4 rounded mb-2">
+									<div>
+										<h1 className="font-bold mb-2">
+											Build websites and applications with Web Development
+										</h1>
+										<p className="text-sm text-gray-500 mb-2">
+											The world of web development is as wide as the internet
+											itself. Much of our social and vocational lives play out
+											on the internet, which prompts new industries aimed at
+											creating, managing, and debugging the websites and
+											applications that we increasingly rely on.
+										</p>
+
+										<button className="px-5 py-3 border border-black text-black font-bold hover:bg-gray-100">
+											Explore Web Developmet
+										</button>
+									</div>
+								</AccordionPanel>
+							</AccordionItem>
+							<AccordionItem>
+								<h3 className="py-4 border-t border-t-gray-300 font-bold border-b-gray-300 w-full">
+									<AccordionButton>AWS</AccordionButton>
+								</h3>
+								<AccordionPanel className="border border-gray-100 p-4 rounded mb-2">
+									<div id="aws">
+										<h1 className="font-bold mb-2">
+											Become an expert in cloud computing with AWS Certification
+										</h1>
+										<p className="text-sm text-gray-500 mb-2">
+											Prep for your AWS certification with an AWS course on
+											Udemy. Learn the fundamentals of AWS such as working with
+											a serverless platform, the various frameworks, security
+											and more. With these courses, you’ll build the valuable
+											skills you need to implement cloud initiatives — and open
+											up new career opportunities. If you want to become an AWS
+											developer, we’ve got the course for you.
+										</p>
+										<button className="px-5 py-3 border border-black text-black font-bold hover:bg-gray-100">
+											Explore AWS Certification
+										</button>
+									</div>
+								</AccordionPanel>
+							</AccordionItem>
+							<AccordionItem>
+								<h3 className="py-4 border-t border-t-gray-300 font-bold border-b-gray-300 w-full">
+									<AccordionButton>Drawing </AccordionButton>
+								</h3>
+								<AccordionPanel className="border border-gray-100 p-4 rounded mb-2">
+									<div id="drawing">
+										<h1 className="font-bold mb-2">
+											Expand your creative skillset with Drawing
+										</h1>
+										<p className="text-sm text-gray-500 mb-2">
+											Want to start drawing for fun or take your craft to the
+											next level? Explore our online drawing classes and learn
+											pencil drawing, figure drawing, cartoon drawing, character
+											drawing for cartoons and anime, illustration, sketching,
+											shading and more. Take an overview course on the
+											fundamentals of drawing or zero in on an area you’d like
+											to improve with a specialized course. We’ve got tons of
+											options to get — and keep — you going.
+										</p>
+										<button className="mb-2 px-5 py-3 border border-black text-black font-bold hover:bg-gray-100">
+											Explore Drawing
+										</button>
+									</div>
+								</AccordionPanel>
+							</AccordionItem>
+							<AccordionItem>
+								<h3 className="py-4 border-t border-t-gray-300 font-bold border-b-gray-300 w-full">
+									<AccordionButton>Data Science </AccordionButton>
+								</h3>
+								<AccordionPanel>
+									<div id="data-science">
+										<h1 className="font-bold mb-2">
+											Lead data-driven decisions with Data Science
+										</h1>
+										<p className="text-sm text-gray-500 mb-2">
+											Data science application is an in-demand skill in many
+											industries worldwide — including finance, transportation,
+											education, manufacturing, human resources, and banking.
+											Explore data science courses with Python, statistics,
+											machine learning, and more to grow your knowledge. Get
+											data science training if you’re into research, statistics,
+											and analytics.
+										</p>
+
+										<button className="px-5 py-3 border border-black text-black font-bold hover:bg-gray-100">
+											Explore Data Science
+										</button>
+									</div>
+								</AccordionPanel>
+							</AccordionItem>
+						</Accordion>
 					</div>
-					<div id="data-science">
-						<h1>Lead data-driven decisions with Data Science</h1>
-						<p>
-							Data science application is an in-demand skill in many industries
-							worldwide — including finance, transportation, education,
-							manufacturing, human resources, and banking. Explore data science
-							courses with Python, statistics, machine learning, and more to
-							grow your knowledge. Get data science training if you’re into
-							research, statistics, and analytics.
-						</p>
-						<button>Explore Data Science</button>
-						<div>
-							<div>
-								<p>IMAGE</p>
-								<h2>Become a Certified HTML, CSS, JavaScript Web...</h2>
-								<span>Tech Learning Network, Mark Lassoff</span>
-							</div>
-						</div>
-					</div>
-					<div id="aws">
-						<h1>Become an expert in cloud computing with AWS Certification</h1>
-						<p>
-							Prep for your AWS certification with an AWS course on Udemy. Learn
-							the fundamentals of AWS such as working with a serverless
-							platform, the various frameworks, security and more. With these
-							courses, you’ll build the valuable skills you need to implement
-							cloud initiatives — and open up new career opportunities. If you
-							want to become an AWS developer, we’ve got the course for you.
-						</p>
-						<button>Explore AWS Certification</button>
-						<div>
-							<div>
-								<p>IMAGE</p>
-								<h2>Become a Certified HTML, CSS, JavaScript Web...</h2>
-								<span>Tech Learning Network, Mark Lassoff</span>
-							</div>
-						</div>
-					</div>
-					<div id="drawing">
-						<h1>Expand your creative skillset with Drawing</h1>
-						<p>
-							Want to start drawing for fun or take your craft to the next
-							level? Explore our online drawing classes and learn pencil
-							drawing, figure drawing, cartoon drawing, character drawing for
-							cartoons and anime, illustration, sketching, shading and more.
-							Take an overview course on the fundamentals of drawing or zero in
-							on an area you’d like to improve with a specialized course. We’ve
-							got tons of options to get — and keep — you going.
-						</p>
-						<button>Explore Drawing</button>
-					</div> */}
 				</section>
 				<section id="top-categories" className="my-10 px-8 md:px-0 -md:mx-8">
 					<Categories />
@@ -237,15 +278,10 @@ function index() {
 				<Featured />
 			</section>
 			<section id="instructor" className="my-10">
-				<div className="px-8 flex flex-col space-y-2 md:flex-row md:justify-center md:items-center md:space-x-12">
-					<Image
-						src={InstructorImage}
-						alt="Instructor"
-						layout="fixed"
-						width="300"
-						height="300"
-					/>
-
+				<div className="px-8 flex flex-col justify-center space-y-2 md:flex-row md:justify-center md:items-center md:space-x-12">
+					<div className="w-80 md:w-96 h-auto">
+						<Image src={InstructorImage} alt="Instructor" layout="responsive" />
+					</div>
 					<div className="w-full md:max-w-sm">
 						<h1 className="text-3xl text-center  font-extrabold text-black mb-2 md:text-left">
 							Become an instructor
@@ -294,13 +330,13 @@ function index() {
 				</div>
 				<div className="mt-28">
 					<div className="flex flex-col items-center md:flex-row md:justify-center md:items-center md:space-x-12">
-						<Image
-							src={UdemyBusinessPerson2}
-							alt="Instructor"
-							width="200"
-							height="300"
-						/>
-
+						<div className="w-96 h-auto">
+							<Image
+								src={UdemyBusinessPerson2}
+								alt="Instructor"
+								layout="responsive"
+							/>
+						</div>
 						<div className="px-8 w-full md:max-w-sm">
 							<h1 className="text-3xl font-extrabold text-black mb-2 text-center md:text-left">
 								Transform your life through education
