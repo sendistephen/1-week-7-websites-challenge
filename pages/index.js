@@ -3,7 +3,7 @@ import Link from "next/link";
 export default function Home() {
 	return (
 		<div className="h-screen px-8 bg-gray-900">
-			<div className="max-w-5xl pt-10 lg:max-w-lg">
+			<div className="max-w-5xl pt-10 mx-auto lg:max-w-lg">
 				<h1 className="mb-4 text-3xl font-bold leading-relaxed text-center text-transparent sm:text-4xl bg-gradient-to-r from-green-500 via-blue-500 to-purple-500 bg-clip-text">
 					Create 7 Websites in 1 Week Challenge
 				</h1>
