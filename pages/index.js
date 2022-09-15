@@ -1,16 +1,13 @@
-import Head from "next/head";
-import Image from "next/image";
 import Link from "next/link";
-import styles from "../styles/Home.module.css";
 
 export default function Home() {
 	return (
-		<div className="px-8 bg-gray-900 h-screen">
-			<div className="max-w-5xl lg:max-w-lg mx-auto pt-10">
-				<h1 className="font-bold text-3xl sm:text-4xl mb-4 text-center text-transparent leading-relaxed bg-gradient-to-r from-green-500 via-blue-500 to-purple-500 bg-clip-text">
+		<div className="h-screen px-8 bg-gray-900">
+			<div className="max-w-5xl pt-10 mx-auto lg:max-w-lg">
+				<h1 className="mb-4 text-3xl font-bold leading-relaxed text-center text-transparent sm:text-4xl bg-gradient-to-r from-green-500 via-blue-500 to-purple-500 bg-clip-text">
 					Create 7 Websites in 1 Week Challenge
 				</h1>
-				<div className="text-gray-400">
+				<div className="text-center text-gray-400">
 					<p>
 						In this challenge I take on the task to create 7 landing website
 						pages
@@ -21,12 +18,21 @@ export default function Home() {
 						this challenge.
 					</p>
 				</div>
-				<div className="mt-4 text-center">
+				<div className="flex flex-col mt-4 space-y-2 text-center">
 					<Link href="/udemy-clone" className="cursor-pointer">
 						<a>
 							<div className="p-2 bg-gray-800 opacity-0.5 rounded">
-								<h3 className="text-xl text-transparent bg-gradient-to-r from-blue-500  via-red-500 to-violet-500 bg-clip-text">
+								<h3 className="text-xl text-transparent bg-gradient-to-r from-blue-500 via-red-500 to-violet-500 bg-clip-text">
 									Day1: Udemy Landing Page Clone
+								</h3>
+							</div>
+						</a>
+					</Link>
+					<Link href="/hoobank" className="cursor-pointer">
+						<a>
+							<div className="p-2 bg-gray-800 opacity-0.5 rounded">
+								<h3 className="text-xl text-transparent bg-gradient-to-r from-green-500 via-blue-500 to-green-500 bg-clip-text">
+									Day2: Modern website page (HooBank)
 								</h3>
 							</div>
 						</a>
