@@ -89,19 +89,19 @@ const featuredTopics = [
 function Featured() {
 	return (
 		<div>
-			<h1 className="mb-4 font-bold text-black text-xl">
+			<h1 className="mb-4 text-xl font-bold text-black">
 				Featured topics by category
 			</h1>
-			<div className="grid gap-8 mb-6 grid-cols-2 md:grid-cols-4">
+			<div className="grid grid-cols-2 gap-8 mb-6 md:grid-cols-4">
 				{featuredTopics.map((featured) => (
 					<div key={featured.id}>
-						<h3 className="text-black font-bold mb-4">{featured.category}</h3>
+						<h3 className="mb-4 font-bold text-black">{featured.category}</h3>
 						{featured.topic.map((topic) => (
 							<div key={topic.id} className="mb-4">
-								<h4 className="text-indigo-800 font-bold underline mb-2">
+								<h4 className="mb-2 font-bold text-indigo-800 underline">
 									{topic.label}
 								</h4>
-								<p className="text-gray-500 text-sm">
+								<p className="text-sm text-gray-500">
 									{topic.num_students} students
 								</p>
 							</div>
@@ -109,7 +109,7 @@ function Featured() {
 					</div>
 				))}
 			</div>
-			<button className="w-full px-5 py-3 border border-black text-black font-bold hover:bg-gray-100 md:w-auto">
+			<button className="w-full px-5 py-3 font-bold text-black border border-black hover:bg-gray-100 md:w-auto">
 				Explore more topics
 			</button>
 		</div>

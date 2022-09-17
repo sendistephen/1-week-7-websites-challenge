@@ -1,8 +1,8 @@
 import React from "react";
-import NASDAQ from "../../assets/nasdaq-dark.svg";
-import BOX from "../../assets/box-dark.svg";
-import NETAPP from "../../assets/netapp-dark.svg";
-import EVENTBRITE from "../../assets/eventbrite-dark.svg";
+import NASDAQ from "../assets/nasdaq-dark.svg";
+import BOX from "../assets/box-dark.svg";
+import NETAPP from "../assets/netapp-dark.svg";
+import EVENTBRITE from "../assets/eventbrite-dark.svg";
 import Image from "next/image";
 
 const logos = [
@@ -26,7 +26,7 @@ const logos = [
 function Trusties() {
 	return (
 		<div className="flex flex-col items-center">
-			<h1 className="mb-4 font-bold text-black text-xl">
+			<h1 className="mb-4 text-xl font-bold text-black">
 				Truested by companies of all sizes
 			</h1>
 			<div className="flex space-x-1">
