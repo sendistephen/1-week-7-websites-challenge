@@ -54,9 +54,9 @@ const categories = [
 function Categories() {
 	return (
 		<div>
-			<h1 className="mb-4 font-bold text-black text-2xl">Top categories</h1>
+			<h1 className="mb-4 text-2xl font-bold text-black">Top categories</h1>
 
-			<div className="hidden md:grid md:grid-cols-3 lg:grid-cols-4 gap-8 ">
+			<div className="hidden gap-8 md:grid md:grid-cols-3 lg:grid-cols-4 ">
 				{categories.map((category) => (
 					<div key={category.id}>
 						<Image
@@ -65,16 +65,16 @@ function Categories() {
 							className="w-16 h-auto"
 						/>
 
-						<p className="text-black font-bold">{category.label}</p>
+						<p className="font-bold text-black">{category.label}</p>
 					</div>
 				))}
 			</div>
-			<div className="md:hidden flex flex-wrap space-y-2 space-x-2">
+			<div className="flex flex-wrap space-x-2 space-y-2 md:hidden">
 				{categories.map((category) => (
 					<div
 						key={category.id}
-						className="border border-black p-3 rounded-full hover:bg-gray-100 cursor-pointer">
-						<p className="text-black font-bold">{category.label}</p>
+						className="p-3 border border-black rounded-full cursor-pointer hover:bg-gray-100">
+						<p className="font-bold text-black">{category.label}</p>
 					</div>
 				))}
 			</div>
